@@ -1,19 +1,8 @@
 <?php
 session_start();
+require 'admin/inc/db_config.php';
 
-// Database connection details
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "hotel-booking-website";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+$conn = $GLOBALS['con'];
 
 // Get form data
 $name = $_POST['name'];

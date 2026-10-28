@@ -1,8 +1,8 @@
 <?php
-$hname = 'localhost';
-$uname = 'root';
-$pass = '';
-$db = 'hotel-booking-website';
+$hname = getenv('DB_HOST') ?: 'localhost';
+$uname = getenv('DB_USER') ?: 'root';
+$pass = getenv('DB_PASS') ?: '';
+$db = getenv('DB_NAME') ?: 'hotel-booking-website';
 
 $con = mysqli_connect($hname, $uname, $pass, $db);
 if (!$con) {

@@ -3,19 +3,7 @@ session_start();
 require('admin/inc/db_config.php');
 require('admin/inc/essentials.php');
 
-// Database connection details (replace with your own)
-$servername = "localhost";
-$username = "root";
-$password = "";
-$database = "hotel-booking-website";
-
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
-
-// Check connection
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-}
+$conn = $GLOBALS['con'];
 
 // Get login credentials
 $email = $_POST['email'];

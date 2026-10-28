@@ -37,11 +37,29 @@ Welcome to Addis Hotel, the ultimate hotel booking platform designed to simplify
     ```
 2. Navigate to the project directory:
     ```sh
-    cd website_development_project
+    cd Hotel-booking-website-main
     ```
-3. Set up your database and import the provided SQL file.
-4. Configure your database settings in the `config.php` file.
-5. Launch the application on a local server or deploy to your web server.
+3. Start Apache and MySQL in XAMPP or another local PHP stack.
+4. Import the provided schema file into MySQL:
+    ```sql
+    mysql -u root -p < hotel_setup.sql
+    ```
+   If your database name or credentials differ, you can override them with environment variables:
+    ```bash
+    DB_HOST=localhost
+    DB_USER=root
+    DB_PASS=
+    DB_NAME=hotel-booking-website
+    ```
+5. Serve the project from the project root with PHP:
+    ```bash
+    php -S 127.0.0.1:8000
+    ```
+6. Open the app in your browser:
+    - http://127.0.0.1:8000/
+    - http://127.0.0.1:8000/admin/index.php
+
+> The project no longer uses hardcoded machine-specific paths, so it can be cloned and run on another device as long as the database is created and the PHP server is started from the project folder.
 
 ## Usage
 1. Register as a new user or log in with your credentials.
